@@ -1,35 +1,69 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ApplicationTheme {
   static ThemeData lightTheme = ThemeData(
-      brightness: Brightness.light,
-      primarySwatch: const MaterialColor(0xFF2196F3, <int, Color>{
-        50: Color(0xFFE3F2FD),
-        100: Color(0xFFBBDEFB),
-        200: Color(0xFF90CAF9),
-        300: Color(0xFF64B5F6),
-        400: Color(0xFF42A5F5),
-        500: Color(0xFF2196F3),
-        600: Color(0xFF1E88E5),
-        700: Color(0xFF1976D2),
-        800: Color(0xFF1565C0),
-        900: Color(0xFF0D47A1),
-      }),
-      textTheme: Typography.blackCupertino);
+    brightness: Brightness.light,
+    primaryColor: Colors.lightGreenAccent,
+    hintColor: Colors.greenAccent,
+    scaffoldBackgroundColor: Colors.white,
+    textTheme: TextTheme(
+      bodyLarge: GoogleFonts.montserrat(
+        // Using GoogleFonts for specific text styles
+        color: Colors.black,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+      bodyMedium: GoogleFonts.montserrat(
+        color: Colors.black,
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+      ),
+      bodySmall: GoogleFonts.montserrat(
+        color: Colors.black,
+        fontSize: 16,
+      ),
+    ),
+    appBarTheme: const AppBarTheme(
+      color: Colors.lightGreenAccent,
+      elevation: 0,
+      iconTheme: IconThemeData(color: Colors.black),
+    ),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: Colors.white,
+      foregroundColor: Colors.lightGreenAccent,
+    ),
+  );
 
   static ThemeData darkTheme = ThemeData(
-      brightness: Brightness.dark,
-      primarySwatch: const MaterialColor(0xFF2196F3, <int, Color>{
-        50: Color(0xFFE3F2FD),
-        100: Color(0xFFBBDEFB),
-        200: Color(0xFF90CAF9),
-        300: Color(0xFF64B5F6),
-        400: Color(0xFF42A5F5),
-        500: Color(0xFF2196F3),
-        600: Color(0xFF1E88E5),
-        700: Color(0xFF1976D2),
-        800: Color(0xFF1565C0),
-        900: Color(0xFF0D47A1),
-      }),
-      textTheme: Typography.whiteCupertino);
+    brightness: Brightness.dark,
+    primaryColor: Colors.greenAccent,
+    hintColor: Colors.lightGreenAccent,
+    scaffoldBackgroundColor: Colors.black,
+    textTheme: TextTheme(
+      bodyLarge: GoogleFonts.montserrat(
+        color: Colors.lightGreenAccent,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+      bodyMedium: GoogleFonts.montserrat(
+        color: Colors.lightGreenAccent,
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+      ),
+      bodySmall: GoogleFonts.montserrat(
+        color: Colors.lightGreenAccent,
+        fontSize: 16,
+      ),
+    ),
+    appBarTheme: const AppBarTheme(
+      color: Colors.black,
+      elevation: 0,
+      iconTheme: IconThemeData(color: Colors.lightGreenAccent),
+    ),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: Colors.lightGreenAccent,
+      foregroundColor: Colors.black,
+    ),
+  );
 }

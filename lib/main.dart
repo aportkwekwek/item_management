@@ -14,7 +14,9 @@ class MyApp extends StatelessWidget {
       theme: ApplicationTheme.lightTheme,
       darkTheme: ApplicationTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: MyHomePage(title: 'Item Management'), // Set MyHomePage as the home
+      home: MyHomePage(
+        title: '',
+      ), // Set MyHomePage as the home
     );
   }
 }
@@ -37,10 +39,19 @@ class MyHomePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: ListView(
-          children: const [
-            Text("Header"),
-            Text('Sub-header'),
-            Text('Paragraph'),
+          children: [
+            Text(
+              "M A L A K I",
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+            Text(
+              'Sub-header',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            Text(
+              'Paragraph',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
           ],
         ),
       ),
