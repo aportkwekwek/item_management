@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:item_management/src/features/authentication/screens/splash_screen/splash_screen.dart';
 import 'package:item_management/src/utils/theme/theme.dart';
 
 void main() {
@@ -10,53 +12,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ApplicationTheme.lightTheme,
-      darkTheme: ApplicationTheme.darkTheme,
-      themeMode: ThemeMode.system,
-      home: MyHomePage(
-        title: '',
-      ), // Set MyHomePage as the home
-    );
+    return GetMaterialApp(
+        theme: ApplicationTheme.lightTheme,
+        darkTheme: ApplicationTheme.darkTheme,
+        themeMode: ThemeMode.system,
+        home: SplashScreen());
   }
 }
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: onPressed,
-        child: Icon(Icons.android_sharp),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: ListView(
-          children: [
-            Text(
-              "M A L A K I A H H H H ",
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-            Text(
-              'Sub-header',
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            Text(
-              'Paragraph',
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-void onPressed() {}
