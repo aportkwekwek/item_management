@@ -11,7 +11,7 @@ class ApplicationTheme {
       bodyLarge: GoogleFonts.montserrat(
         // Using GoogleFonts for specific text styles
         color: Colors.black,
-        fontSize: 20,
+        fontSize: 28,
         fontWeight: FontWeight.bold,
       ),
       bodyMedium: GoogleFonts.montserrat(
@@ -43,7 +43,7 @@ class ApplicationTheme {
     textTheme: TextTheme(
       bodyLarge: GoogleFonts.montserrat(
         color: Colors.lightGreenAccent,
-        fontSize: 20,
+        fontSize: 28,
         fontWeight: FontWeight.bold,
       ),
       bodyMedium: GoogleFonts.montserrat(
