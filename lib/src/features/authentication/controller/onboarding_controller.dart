@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:item_management/src/features/authentication/screens/home_screen/home_screen.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 
 import '../../../constants/const_colors.dart';
@@ -19,11 +21,15 @@ class OnBoardingController extends GetxController {
 
   void animateToNextSlide() {
     int nextPage = controller.currentPage + 1;
-    controller.animateToPage(page: nextPage);
+    if (nextPage == 3) {
+      Get.to(() => HomeScreen());
+    } else {
+      controller.animateToPage(page: nextPage);
+    }
   }
 
   void animateSkip() {
-    controller.animateToPage(page: 2);
+    Get.to(() => HomeScreen());
   }
 
   final onboardingPages = [

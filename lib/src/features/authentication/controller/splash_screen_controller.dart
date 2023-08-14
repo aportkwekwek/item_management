@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:item_management/src/features/authentication/screens/welcome_screen/welcome_screen.dart';
+import 'package:item_management/src/features/authentication/screens/home_screen/home_screen.dart';
 
 class SplashScreenController extends GetxController {
   static SplashScreenController get find => Get.find();
@@ -9,6 +9,6 @@ class SplashScreenController extends GetxController {
     await Future.delayed(const Duration(milliseconds: 500));
     animate.value = true;
     await Future.delayed(const Duration(milliseconds: 5000));
-    Get.to(const WelcomeScreen());
+    Get.to(const HomeScreen());
   }
 }

@@ -16,38 +16,38 @@ class OnBoardingScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(alignment: Alignment.center, children: [
         LiquidSwipe(
-            liquidController: onboardingController.controller,
-            enableSideReveal: true,
-            pages: onboardingController.onboardingPages,
-            onPageChangeCallback: onboardingController.checkPage),
-        Obx(
-          () => Positioned(
-              top: 50,
-              right: 30,
-              child: TextButton(
-                onPressed: onboardingController.animateSkip,
-                child: Text(
-                  "Skip",
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-              )),
+          liquidController: onboardingController.controller,
+          enableSideReveal: true,
+          pages: onboardingController.onboardingPages,
+          onPageChangeCallback: onboardingController.checkPage,
         ),
-        Obx(
-          () => Positioned(
-            bottom: 70.0,
-            child: OutlinedButton(
-              onPressed: onboardingController.animateToNextSlide,
-              style: ElevatedButton.styleFrom(
-                  side: const BorderSide(color: Colors.black12),
-                  padding: EdgeInsets.all(10),
-                  shape: CircleBorder(),
-                  backgroundColor: Colors.white),
-              child: Container(
-                padding: const EdgeInsets.all(5.0),
-                decoration: const BoxDecoration(
-                    color: Colors.black, shape: BoxShape.circle),
-                child: const Icon(Icons.arrow_forward_ios),
+        Positioned(
+            top: 50,
+            right: 30,
+            child: TextButton(
+              onPressed: onboardingController.animateSkip,
+              child: Text(
+                "Skip",
+                style: Theme.of(context).textTheme.bodySmall,
               ),
+            )),
+        Positioned(
+          bottom: 70.0,
+          child: OutlinedButton(
+            onPressed: onboardingController.animateToNextSlide,
+            style: ElevatedButton.styleFrom(
+              // side: const BorderSide(color: Colors.black12),
+              padding: EdgeInsets.all(10),
+              shape: CircleBorder(),
+              backgroundColor: Theme.of(context).colorScheme.onPrimary,
+            ),
+            child: Container(
+              padding: const EdgeInsets.all(5.0),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.onSecondary,
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(Icons.arrow_forward_ios),
             ),
           ),
         ),
@@ -55,12 +55,16 @@ class OnBoardingScreen extends StatelessWidget {
           () => Positioned(
             bottom: 20,
             child: AnimatedSmoothIndicator(
-                activeIndex: onboardingController.controller.currentPage,
+                activeIndex: onboardingController.currentPage.value,
                 count: 3,
-                effect: const WormEffect(
-                    activeDotColor: Colors.deepPurpleAccent, dotHeight: 5.0)),
+                effect: WormEffect(
+                  activeDotColor: Theme.of(context).colorScheme.onError,
+                  dotHeight: 8.0,
+                  strokeWidth: 2.3,
+                  dotColor: Theme.of(context).colorScheme.onPrimary,
+                )),
           ),
-        )
+        ),
       ]),
     );
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:item_management/src/features/authentication/screens/onboarding_screen/onboarding_screen.dart';
-import 'package:item_management/src/features/authentication/screens/splash_screen/splash_screen.dart';
 import 'package:item_management/src/utils/theme/theme.dart';
 
 void main() {
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ApplicationTheme.lightTheme,
         darkTheme: ApplicationTheme.darkTheme,
